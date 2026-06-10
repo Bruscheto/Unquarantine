@@ -1,8 +1,6 @@
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class SmokeTests: XCTestCase {
-    func testPackageCompiles() {
-        XCTAssertTrue(true)
-    }
+@Test func packageCompiles() {
+    #expect(Bool(true))
 }

@@ -1,34 +1,34 @@
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class CommandBuilderTests: XCTestCase {
-    func testShellQuoteWrapsInSingleQuotes() {
-        XCTAssertEqual(CommandBuilder.shellQuote("/a/b"), "'/a/b'")
+@Suite struct CommandBuilderTests {
+    @Test func shellQuoteWrapsInSingleQuotes() {
+        #expect(CommandBuilder.shellQuote("/a/b") == "'/a/b'")
     }
 
-    func testShellQuoteEscapesEmbeddedSingleQuote() {
-        XCTAssertEqual(CommandBuilder.shellQuote("a'b"), "'a'\\''b'")
+    @Test func shellQuoteEscapesEmbeddedSingleQuote() {
+        #expect(CommandBuilder.shellQuote("a'b") == "'a'\\''b'")
     }
 
-    func testBuildIsSingleLine() {
+    @Test func buildIsSingleLine() {
         let script = CommandBuilder.build(paths: ["/a", "/b"])
-        XCTAssertFalse(script.contains("\n"))
+        #expect(!script.contains("\n"))
     }
 
-    func testBuildContainsBothCommandsPerPath() {
+    @Test func buildContainsBothCommandsPerPath() {
         let script = CommandBuilder.build(paths: ["/Applications/Foo.app"])
-        XCTAssertTrue(script.contains("xattr -r -d com.apple.quarantine '/Applications/Foo.app' 2>/dev/null || true"))
-        XCTAssertTrue(script.contains("codesign --force --deep --sign - '/Applications/Foo.app' || status=1"))
+        #expect(script.contains("xattr -r -d com.apple.quarantine '/Applications/Foo.app' 2>/dev/null || true"))
+        #expect(script.contains("codesign --force --deep --sign - '/Applications/Foo.app' || status=1"))
     }
 
-    func testBuildInitializesAndExitsWithStatus() {
+    @Test func buildInitializesAndExitsWithStatus() {
         let script = CommandBuilder.build(paths: ["/a"])
-        XCTAssertTrue(script.hasPrefix("status=0;"))
-        XCTAssertTrue(script.hasSuffix("exit $status"))
+        #expect(script.hasPrefix("status=0;"))
+        #expect(script.hasSuffix("exit $status"))
     }
 
-    func testMaliciousFilenameCannotInject() {
+    @Test func maliciousFilenameCannotInject() {
         let script = CommandBuilder.build(paths: ["/x/; rm -rf /"])
-        XCTAssertTrue(script.contains("'/x/; rm -rf /'"))
+        #expect(script.contains("'/x/; rm -rf /'"))
     }
 }

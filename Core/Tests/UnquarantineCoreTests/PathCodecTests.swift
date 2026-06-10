@@ -1,28 +1,28 @@
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class PathCodecTests: XCTestCase {
-    func testRoundTripSimple() {
+@Suite struct PathCodecTests {
+    @Test func roundTripSimple() {
         let paths = ["/Applications/Foo.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testRoundTripMultiple() {
+    @Test func roundTripMultiple() {
         let paths = ["/Applications/Foo.app", "/Users/x/Bar.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testRoundTripSpecialCharacters() {
+    @Test func roundTripSpecialCharacters() {
         let paths = ["/Users/x/My App, v2.app", "/Users/x/a&b?c .app", "/Users/x/café.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testEncodedValueHasNoLiteralComma() {
+    @Test func encodedValueHasNoLiteralComma() {
         let encoded = PathCodec.encode(["/a,b", "/c"])
-        XCTAssertEqual(encoded.split(separator: ",").count, 2)
+        #expect(encoded.split(separator: ",").count == 2)
     }
 
-    func testDecodeEmptyReturnsEmpty() {
-        XCTAssertEqual(PathCodec.decode(""), [])
+    @Test func decodeEmptyReturnsEmpty() {
+        #expect(PathCodec.decode("") == [])
     }
 }

@@ -1,26 +1,20 @@
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class AppleScriptResultTests: XCTestCase {
-    func testNilErrorIsSuccess() {
-        XCTAssertEqual(AppleScriptResult.from(errorNumber: nil, message: nil), .success)
+@Suite struct AppleScriptResultTests {
+    @Test func nilErrorIsSuccess() {
+        #expect(AppleScriptResult.from(errorNumber: nil, message: nil) == .success)
     }
 
-    func testMinus128IsCancelled() {
-        XCTAssertEqual(AppleScriptResult.from(errorNumber: -128, message: "User cancelled."), .cancelled)
+    @Test func minus128IsCancelled() {
+        #expect(AppleScriptResult.from(errorNumber: -128, message: "User cancelled.") == .cancelled)
     }
 
-    func testOtherErrorIsFailedWithMessage() {
-        XCTAssertEqual(
-            AppleScriptResult.from(errorNumber: 1, message: "codesign failed"),
-            .failed(reason: "codesign failed")
-        )
+    @Test func otherErrorIsFailedWithMessage() {
+        #expect(AppleScriptResult.from(errorNumber: 1, message: "codesign failed") == .failed(reason: "codesign failed"))
     }
 
-    func testOtherErrorWithoutMessageSynthesizesReason() {
-        XCTAssertEqual(
-            AppleScriptResult.from(errorNumber: 42, message: nil),
-            .failed(reason: "Unknown error (42)")
-        )
+    @Test func otherErrorWithoutMessageSynthesizesReason() {
+        #expect(AppleScriptResult.from(errorNumber: 42, message: nil) == .failed(reason: "Unknown error (42)"))
     }
 }
