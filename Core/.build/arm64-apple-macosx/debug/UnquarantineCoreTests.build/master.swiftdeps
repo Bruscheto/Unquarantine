@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "7f900bad645e661f3f3d3f71de957937"
+build_time: [1781097119, 683163000]
+inputs:
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift": !dirty [1781091611, 810474288]

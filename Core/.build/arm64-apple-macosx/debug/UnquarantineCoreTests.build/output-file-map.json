@@ -1,0 +1,29 @@
+{
+  "": {
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/master.swiftdeps"
+  },
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift": {
+    "dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.d",
+    "object": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.swift.o",
+    "swiftmodule": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.swiftdeps"
+  },
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift": {
+    "dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.d",
+    "object": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.swift.o",
+    "swiftmodule": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.swiftdeps"
+  },
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/PathCodecTests.swift": {
+    "dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.d",
+    "object": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.swift.o",
+    "swiftmodule": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.swiftdeps"
+  },
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift": {
+    "dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.d",
+    "object": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.swift.o",
+    "swiftmodule": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.swiftdeps"
+  }
+}

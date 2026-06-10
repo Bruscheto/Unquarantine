@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/master.swiftdeps"
+  },
+  "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift": {
+    "dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.d",
+    "object": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.swiftdeps"
+  }
+}

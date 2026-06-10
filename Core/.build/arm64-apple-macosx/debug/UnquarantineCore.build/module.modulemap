@@ -1,0 +1,4 @@
+module UnquarantineCore {
+    header "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/UnquarantineCore-Swift.h"
+    requires objc
+}

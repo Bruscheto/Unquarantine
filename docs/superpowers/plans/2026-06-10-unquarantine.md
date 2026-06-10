@@ -62,7 +62,10 @@ active. Resolve by installing Xcode from the App Store, then:
 
 Note: Tasks 1–4 (the `UnquarantineCore` package) only need the Swift toolchain that
 ships with Command Line Tools and can proceed even if full Xcode is not yet
-installed.
+installed. They use the **swift-testing** framework (`import Testing`), NOT XCTest —
+`XCTest.framework` ships only with full Xcode, but `Testing.framework` is present in
+the Command Line Tools, so `swift test` works. The package must declare
+`platforms: [.macOS(.v13)]` (swift-testing requires macOS 10.15+).
 
 ---
 
@@ -108,13 +111,11 @@ public enum PathCodec {}
 `Core/Tests/UnquarantineCoreTests/SmokeTests.swift`:
 
 ```swift
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class SmokeTests: XCTestCase {
-    func testPackageCompiles() {
-        XCTAssertTrue(true)
-    }
+@Test func packageCompiles() {
+    #expect(Bool(true))
 }
 ```
 
@@ -149,33 +150,33 @@ exact inverse.
 `Core/Tests/UnquarantineCoreTests/PathCodecTests.swift`:
 
 ```swift
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class PathCodecTests: XCTestCase {
-    func testRoundTripSimple() {
+@Suite struct PathCodecTests {
+    @Test func roundTripSimple() {
         let paths = ["/Applications/Foo.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testRoundTripMultiple() {
+    @Test func roundTripMultiple() {
         let paths = ["/Applications/Foo.app", "/Users/x/Bar.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testRoundTripSpecialCharacters() {
+    @Test func roundTripSpecialCharacters() {
         let paths = ["/Users/x/My App, v2.app", "/Users/x/a&b?c .app", "/Users/x/café.app"]
-        XCTAssertEqual(PathCodec.decode(PathCodec.encode(paths)), paths)
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
-    func testEncodedValueHasNoLiteralComma() {
+    @Test func encodedValueHasNoLiteralComma() {
         let encoded = PathCodec.encode(["/a,b", "/c"])
         // Exactly one separator comma -> exactly one split point.
-        XCTAssertEqual(encoded.split(separator: ",").count, 2)
+        #expect(encoded.split(separator: ",").count == 2)
     }
 
-    func testDecodeEmptyReturnsEmpty() {
-        XCTAssertEqual(PathCodec.decode(""), [])
+    @Test func decodeEmptyReturnsEmpty() {
+        #expect(PathCodec.decode("") == [])
     }
 }
 ```
@@ -248,39 +249,39 @@ embedded inside an AppleScript string literal.
 `Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift`:
 
 ```swift
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class CommandBuilderTests: XCTestCase {
-    func testShellQuoteWrapsInSingleQuotes() {
-        XCTAssertEqual(CommandBuilder.shellQuote("/a/b"), "'/a/b'")
+@Suite struct CommandBuilderTests {
+    @Test func shellQuoteWrapsInSingleQuotes() {
+        #expect(CommandBuilder.shellQuote("/a/b") == "'/a/b'")
     }
 
-    func testShellQuoteEscapesEmbeddedSingleQuote() {
-        XCTAssertEqual(CommandBuilder.shellQuote("a'b"), "'a'\\''b'")
+    @Test func shellQuoteEscapesEmbeddedSingleQuote() {
+        #expect(CommandBuilder.shellQuote("a'b") == "'a'\\''b'")
     }
 
-    func testBuildIsSingleLine() {
+    @Test func buildIsSingleLine() {
         let script = CommandBuilder.build(paths: ["/a", "/b"])
-        XCTAssertFalse(script.contains("\n"))
+        #expect(!script.contains("\n"))
     }
 
-    func testBuildContainsBothCommandsPerPath() {
+    @Test func buildContainsBothCommandsPerPath() {
         let script = CommandBuilder.build(paths: ["/Applications/Foo.app"])
-        XCTAssertTrue(script.contains("xattr -r -d com.apple.quarantine '/Applications/Foo.app' 2>/dev/null || true"))
-        XCTAssertTrue(script.contains("codesign --force --deep --sign - '/Applications/Foo.app' || status=1"))
+        #expect(script.contains("xattr -r -d com.apple.quarantine '/Applications/Foo.app' 2>/dev/null || true"))
+        #expect(script.contains("codesign --force --deep --sign - '/Applications/Foo.app' || status=1"))
     }
 
-    func testBuildInitializesAndExitsWithStatus() {
+    @Test func buildInitializesAndExitsWithStatus() {
         let script = CommandBuilder.build(paths: ["/a"])
-        XCTAssertTrue(script.hasPrefix("status=0;"))
-        XCTAssertTrue(script.hasSuffix("exit $status"))
+        #expect(script.hasPrefix("status=0;"))
+        #expect(script.hasSuffix("exit $status"))
     }
 
-    func testMaliciousFilenameCannotInject() {
+    @Test func maliciousFilenameCannotInject() {
         // A filename containing "; rm -rf /" must stay inside the single-quoted token.
         let script = CommandBuilder.build(paths: ["/x/; rm -rf /"])
-        XCTAssertTrue(script.contains("'/x/; rm -rf /'"))
+        #expect(script.contains("'/x/; rm -rf /'"))
     }
 }
 ```
@@ -346,30 +347,24 @@ git commit -m "feat(core): add CommandBuilder for the privileged shell script"
 `Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift`:
 
 ```swift
-import XCTest
+import Testing
 @testable import UnquarantineCore
 
-final class AppleScriptResultTests: XCTestCase {
-    func testNilErrorIsSuccess() {
-        XCTAssertEqual(AppleScriptResult.from(errorNumber: nil, message: nil), .success)
+@Suite struct AppleScriptResultTests {
+    @Test func nilErrorIsSuccess() {
+        #expect(AppleScriptResult.from(errorNumber: nil, message: nil) == .success)
     }
 
-    func testMinus128IsCancelled() {
-        XCTAssertEqual(AppleScriptResult.from(errorNumber: -128, message: "User cancelled."), .cancelled)
+    @Test func minus128IsCancelled() {
+        #expect(AppleScriptResult.from(errorNumber: -128, message: "User cancelled.") == .cancelled)
     }
 
-    func testOtherErrorIsFailedWithMessage() {
-        XCTAssertEqual(
-            AppleScriptResult.from(errorNumber: 1, message: "codesign failed"),
-            .failed(reason: "codesign failed")
-        )
+    @Test func otherErrorIsFailedWithMessage() {
+        #expect(AppleScriptResult.from(errorNumber: 1, message: "codesign failed") == .failed(reason: "codesign failed"))
     }
 
-    func testOtherErrorWithoutMessageSynthesizesReason() {
-        XCTAssertEqual(
-            AppleScriptResult.from(errorNumber: 42, message: nil),
-            .failed(reason: "Unknown error (42)")
-        )
+    @Test func otherErrorWithoutMessageSynthesizesReason() {
+        #expect(AppleScriptResult.from(errorNumber: 42, message: nil) == .failed(reason: "Unknown error (42)"))
     }
 }
 ```

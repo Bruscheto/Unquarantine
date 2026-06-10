@@ -1,0 +1,620 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.xctest/Contents/MacOS/UnquarantineCorePackageTests",
+      "packagePath" : "/Users/brus/Codes/Projects/Unquarantine/Core",
+      "productName" : "UnquarantineCorePackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.UnquarantineCore-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/sources",
+      "importPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/AppleScriptResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/CommandBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/PathCodec.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "UnquarantineCore",
+      "moduleOutputPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCore.swiftmodule",
+      "objects" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/AppleScriptResult.swift.o",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/CommandBuilder.swift.o",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/PathCodec.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/UnquarantineCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-F",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "core"
+      ],
+      "outputFileMapPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/AppleScriptResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/CommandBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/PathCodec.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/AppleScriptResult.swift",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/CommandBuilder.swift",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/PathCodec.swift"
+      ],
+      "tempsPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.UnquarantineCorePackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/sources",
+      "importPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "UnquarantineCorePackageTests",
+      "moduleOutputPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCorePackageTests.swiftmodule",
+      "objects" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/UnquarantineCorePackageTests-Swift.h",
+        "-F",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "core"
+      ],
+      "outputFileMapPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCorePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.UnquarantineCoreTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/sources",
+      "importPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/PathCodecTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "UnquarantineCoreTests",
+      "moduleOutputPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.swift.o",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.swift.o",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.swift.o",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-F",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "core"
+      ],
+      "outputFileMapPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules/UnquarantineCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/PathCodecTests.swift",
+        "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift"
+      ],
+      "tempsPath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "UnquarantineCore" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "UnquarantineCore",
+      "-package-name",
+      "core",
+      "-incremental",
+      "-c",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/AppleScriptResult.swift",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/CommandBuilder.swift",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/PathCodec.swift",
+      "-I",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/UnquarantineCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-F",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "core",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "UnquarantineCorePackageTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "UnquarantineCorePackageTests",
+      "-package-name",
+      "core",
+      "-incremental",
+      "-c",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift",
+      "-I",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/UnquarantineCorePackageTests-Swift.h",
+      "-F",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "core",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "UnquarantineCoreTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "UnquarantineCoreTests",
+      "-package-name",
+      "core",
+      "-incremental",
+      "-c",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/PathCodecTests.swift",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift",
+      "-I",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-F",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "core",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "UnquarantineCore" : [
+
+    ],
+    "UnquarantineCorePackageTests" : [
+      "UnquarantineCoreTests",
+      "UnquarantineCore"
+    ],
+    "UnquarantineCoreTests" : [
+      "UnquarantineCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/AppleScriptResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/CommandBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/PathCodec.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/sources"
+    },
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/sources"
+    },
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/AppleScriptResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/CommandBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCore.build/PathCodec.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/AppleScriptResultTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/CommandBuilderTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/PathCodecTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/SmokeTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCorePackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/AppleScriptResultTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/CommandBuilderTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/PathCodecTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/brus/Codes/Projects/Unquarantine/Core/Tests/UnquarantineCoreTests/SmokeTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/UnquarantineCoreTests.build/sources"
+    },
+    "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/brus/Codes/Projects/Unquarantine/Core/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

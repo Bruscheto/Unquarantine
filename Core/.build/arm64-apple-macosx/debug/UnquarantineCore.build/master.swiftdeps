@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "9f56100a71ac157f3531680e38cf4cdb"
+build_time: [1781097101, 969782000]
+inputs:
+  "/Users/brus/Codes/Projects/Unquarantine/Core/Sources/UnquarantineCore/PathCodec.swift": [1781091603, 793717655]
