@@ -17,6 +17,11 @@ import Testing
         #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
     }
 
+    @Test func roundTripCommaInPath() {
+        let paths = ["/a,b", "/c"]
+        #expect(PathCodec.decode(PathCodec.encode(paths)) == paths)
+    }
+
     @Test func encodedValueHasNoLiteralComma() {
         let encoded = PathCodec.encode(["/a,b", "/c"])
         #expect(encoded.split(separator: ",").count == 2)

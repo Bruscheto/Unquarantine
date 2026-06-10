@@ -23,7 +23,7 @@ import Testing
 
     @Test func buildInitializesAndExitsWithStatus() {
         let script = CommandBuilder.build(paths: ["/a"])
-        #expect(script.hasPrefix("status=0;"))
+        #expect(script.hasPrefix("status=0; "))
         #expect(script.hasSuffix("exit $status"))
     }
 
