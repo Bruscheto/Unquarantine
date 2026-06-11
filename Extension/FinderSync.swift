@@ -16,9 +16,13 @@ class FinderSync: FIFinderSync {
                               action: #selector(strip(_:)),
                               keyEquivalent: "")
         item.target = self
-        // Reuse the system "open padlock" SF Symbol so the menu item has an icon
-        // without shipping a custom asset. Template image adopts the menu text color.
-        if let icon = NSImage(systemSymbolName: "lock.open", accessibilityDescription: "Remove quarantine") {
+        // Reuse a system SF Symbol so the item matches native Finder menu icons and
+        // adapts to light/dark automatically (a template image renders in the menu's
+        // label color). The filled variant + regular weight reads better than the thin
+        // outline at menu size.
+        let iconConfig = NSImage.SymbolConfiguration(pointSize: 15, weight: .regular)
+        if let icon = NSImage(systemSymbolName: "lock.open.fill", accessibilityDescription: "Remove quarantine")?
+            .withSymbolConfiguration(iconConfig) {
             icon.isTemplate = true
             item.image = icon
         }
