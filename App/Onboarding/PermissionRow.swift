@@ -25,6 +25,7 @@ struct PermissionRow: View {
                         .foregroundStyle(.white)
                 }
             }
+            .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(title).font(.headline)

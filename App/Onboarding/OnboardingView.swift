@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 struct OnboardingView: View {
@@ -18,6 +19,8 @@ struct OnboardingView: View {
                     .multilineTextAlignment(.center)
             }
 
+            // No public API exposes whether the Finder extension is enabled, so this
+            // step has no live checkmark — we just provide the button.
             PermissionRow(
                 index: 1,
                 title: "Enable the Finder extension",
@@ -48,6 +51,9 @@ struct OnboardingView: View {
         .padding(28)
         .frame(width: 460)
         .onAppear { permissions.refresh() }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+            permissions.refresh()
+        }
     }
 
     private var isNotificationsAuthorized: Bool {
