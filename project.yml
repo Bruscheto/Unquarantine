@@ -3,6 +3,11 @@ options:
   bundleIdPrefix: com.brus.unquarantine
   deploymentTarget:
     macOS: "13.0"
+settings:
+  base:
+    # Xcode 16+ injects a __preview.dylib (SwiftUI preview/debug-dylib shim) that breaks
+    # the ad-hoc deep code-signing of the .appex on command-line builds. Disable it.
+    ENABLE_DEBUG_DYLIB: NO
 packages:
   UnquarantineCore:
     path: Core
