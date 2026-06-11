@@ -14,6 +14,7 @@ struct UnquarantineApp: App {
                 .onOpenURL { handle($0) }
         }
         .windowResizability(.contentSize)
+        .defaultPosition(.center)
     }
 
     private func handle(_ url: URL) {
