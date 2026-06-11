@@ -20,9 +20,9 @@ class FinderSync: FIFinderSync {
         // adapts to light/dark automatically (a template image renders in the menu's
         // label color). The filled variant + regular weight reads better than the thin
         // outline at menu size.
-        let iconConfig = NSImage.SymbolConfiguration(pointSize: 15, weight: .regular)
-        if let icon = NSImage(systemSymbolName: "lock.open.fill", accessibilityDescription: "Remove quarantine")?
-            .withSymbolConfiguration(iconConfig) {
+        let iconConfig = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
+        if let base = NSImage(systemSymbolName: "lock.open.fill", accessibilityDescription: "Remove quarantine") {
+            let icon = base.withSymbolConfiguration(iconConfig) ?? base
             icon.isTemplate = true
             item.image = icon
         }
