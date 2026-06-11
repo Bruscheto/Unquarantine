@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var status: AppStatus
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    @State private var showSetup = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -14,8 +16,15 @@ struct ContentView: View {
                 .font(.footnote)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.tertiary)
+            Button("Set Up Permissions\u{2026}") { showSetup = true }
         }
         .padding(24)
-        .frame(width: 380, height: 200)
+        .frame(width: 380, height: 240)
+        .onAppear {
+            if !hasCompletedOnboarding { showSetup = true }
+        }
+        .sheet(isPresented: $showSetup) {
+            OnboardingView()
+        }
     }
 }

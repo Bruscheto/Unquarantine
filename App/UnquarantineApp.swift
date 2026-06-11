@@ -4,15 +4,13 @@ import UnquarantineCore
 @main
 struct UnquarantineApp: App {
     @StateObject private var status = AppStatus()
-
-    init() {
-        Notifier.requestAuthorization()
-    }
+    @StateObject private var permissions = PermissionsModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(status)
+                .environmentObject(permissions)
                 .onOpenURL { handle($0) }
         }
         .windowResizability(.contentSize)
