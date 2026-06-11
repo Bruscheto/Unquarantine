@@ -36,6 +36,11 @@ targets:
     sources: [Extension]
     info:
       path: Extension/Info.plist
+      properties:
+        CFBundlePackageType: "XPC!"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.FinderSync
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).FinderSync
     settings:
       base:
         CODE_SIGN_ENTITLEMENTS: Extension/Extension.entitlements

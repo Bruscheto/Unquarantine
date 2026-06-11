@@ -2,3 +2,5 @@
 build/
 DerivedData/
 *.xcodeproj
+App/Info.plist
+Extension/Info.plist
