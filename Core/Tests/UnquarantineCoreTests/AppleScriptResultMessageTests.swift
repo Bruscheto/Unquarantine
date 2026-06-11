@@ -15,6 +15,6 @@ import Testing
     }
 
     @Test func failed() {
-        #expect(AppleScriptResult.failed(reason: "boom").message(count: 1) == "Failed: boom.")
+        #expect(AppleScriptResult.failed(reason: "boom").message(count: 1) == "Failed: boom")
     }
 }

@@ -7,7 +7,7 @@ public extension AppleScriptResult {
         case .cancelled:
             return "Cancelled."
         case .failed(let reason):
-            return "Failed: \(reason)."
+            return "Failed: \(reason)"
         }
     }
 }
