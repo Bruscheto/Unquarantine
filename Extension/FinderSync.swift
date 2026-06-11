@@ -16,16 +16,15 @@ class FinderSync: FIFinderSync {
                               action: #selector(strip(_:)),
                               keyEquivalent: "")
         item.target = self
-        // Reuse a system SF Symbol so the item matches native Finder menu icons and
-        // adapts to light/dark automatically (a template image renders in the menu's
-        // label color). The filled variant + regular weight reads better than the thin
-        // outline at menu size.
-        let iconConfig = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
-        if let base = NSImage(systemSymbolName: "lock.slash.fill", accessibilityDescription: "Remove quarantine") {
-            let icon = base.withSymbolConfiguration(iconConfig) ?? base
-            icon.isTemplate = true
-            item.image = icon
-        }
+        // Load a bundled monochrome TEMPLATE image. macOS recolors template images to
+        // the menu's label color, so the icon adapts to light/dark automatically — and
+        // unlike a runtime SF Symbol, a bundled template reliably keeps its template
+        // flag across the extension→Finder process boundary (which is why the symbol
+        // version did not adapt). The symbol is kept only as a fallback.
+        let icon = NSImage(named: NSImage.Name("MenuIcon"))
+            ?? NSImage(systemSymbolName: "lock.slash.fill", accessibilityDescription: "Remove quarantine")
+        icon?.isTemplate = true
+        item.image = icon
         menu.addItem(item)
         return menu
     }
