@@ -21,7 +21,7 @@ class FinderSync: FIFinderSync {
         // label color). The filled variant + regular weight reads better than the thin
         // outline at menu size.
         let iconConfig = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
-        if let base = NSImage(systemSymbolName: "lock.open.fill", accessibilityDescription: "Remove quarantine") {
+        if let base = NSImage(systemSymbolName: "lock.slash.fill", accessibilityDescription: "Remove quarantine") {
             let icon = base.withSymbolConfiguration(iconConfig) ?? base
             icon.isTemplate = true
             item.image = icon
