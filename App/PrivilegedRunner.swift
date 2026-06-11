@@ -17,6 +17,11 @@ enum PrivilegedRunner {
     }
 
     /// Escape a string for embedding inside an AppleScript double-quoted literal.
+    /// Only `\` and `"` are escaped — that is the complete set of metacharacters at
+    /// the AppleScript-string level. Shell-metacharacter safety (spaces, `$`, backticks,
+    /// `;`, etc. inside file paths) is the responsibility of `CommandBuilder`, which
+    /// single-quotes every path, so they reach `/bin/sh` inert. Do NOT escape `$` here:
+    /// the wrapped script intentionally uses the shell variable `$status`.
     private static func escapeForAppleScript(_ s: String) -> String {
         s.replacingOccurrences(of: "\\", with: "\\\\")
          .replacingOccurrences(of: "\"", with: "\\\"")

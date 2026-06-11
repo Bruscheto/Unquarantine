@@ -21,6 +21,8 @@ struct UnquarantineApp: App {
     private func handle(_ url: URL) {
         guard url.scheme == "unquarantine", url.host == "strip",
               let query = url.query, query.hasPrefix("paths=") else { return }
+        // Use the raw (still percent-encoded) query so PathCodec's comma separator is
+        // intact; URLComponents would percent-decode and could reintroduce a literal comma.
         let value = String(query.dropFirst("paths=".count))
         let paths = PathCodec.decode(value).filter { FileManager.default.fileExists(atPath: $0) }
         guard !paths.isEmpty else { return }

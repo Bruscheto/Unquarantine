@@ -8,16 +8,12 @@ enum Notifier {
     }
 
     static func notify(_ result: AppleScriptResult, count: Int) {
+        // The user dismissed the password dialog themselves — no notification needed.
+        if case .cancelled = result { return }
+
         let content = UNMutableNotificationContent()
         content.title = "Unquarantine"
-        switch result {
-        case .success:
-            content.body = "Done \u{2014} processed \(count) item\(count == 1 ? "" : "s")."
-        case .cancelled:
-            content.body = "Cancelled."
-        case .failed(let reason):
-            content.body = "Failed: \(reason)"
-        }
+        content.body = result.message(count: count)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request)
     }
