@@ -1,0 +1,47 @@
+name: Unquarantine
+options:
+  bundleIdPrefix: com.brus.unquarantine
+  deploymentTarget:
+    macOS: "13.0"
+packages:
+  UnquarantineCore:
+    path: Core
+targets:
+  Unquarantine:
+    type: application
+    platform: macOS
+    sources: [App]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleURLName: com.brus.unquarantine.url
+            CFBundleURLSchemes: [unquarantine]
+        LSUIElement: false
+    settings:
+      base:
+        CODE_SIGN_ENTITLEMENTS: App/Unquarantine.entitlements
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+        ENABLE_HARDENED_RUNTIME: NO
+        GENERATE_INFOPLIST_FILE: NO
+    dependencies:
+      - package: UnquarantineCore
+      - target: UnquarantineFinderExtension
+        embed: true
+  UnquarantineFinderExtension:
+    type: app-extension
+    platform: macOS
+    sources: [Extension]
+    info:
+      path: Extension/Info.plist
+    settings:
+      base:
+        CODE_SIGN_ENTITLEMENTS: Extension/Extension.entitlements
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+        GENERATE_INFOPLIST_FILE: NO
+    dependencies:
+      - package: UnquarantineCore
