@@ -22,7 +22,9 @@ targets:
         CFBundleURLTypes:
           - CFBundleURLName: com.brus.unquarantine.url
             CFBundleURLSchemes: [unquarantine]
-        LSUIElement: false
+        # Agent app: no Dock icon, no auto window. The right-click action runs silently
+        # and reports via a notification; a setup window is shown only on direct launch.
+        LSUIElement: true
     settings:
       base:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

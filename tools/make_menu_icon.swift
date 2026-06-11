@@ -10,8 +10,9 @@ let outDir = "Extension/Assets.xcassets/MenuIcon.imageset"
 try? FileManager.default.createDirectory(atPath: outDir, withIntermediateDirectories: true)
 
 func render(canvas: Int, point: CGFloat, file: String) {
-    let cfg = NSImage.SymbolConfiguration(pointSize: point, weight: .regular)
-    guard let base = NSImage(systemSymbolName: "lock.slash.fill", accessibilityDescription: nil),
+    // Outline (hollow) variant, medium weight so it doesn't look too thin at menu size.
+    let cfg = NSImage.SymbolConfiguration(pointSize: point, weight: .medium)
+    guard let base = NSImage(systemSymbolName: "lock.slash", accessibilityDescription: nil),
           let sym = base.withSymbolConfiguration(cfg) else {
         FileHandle.standardError.write("symbol unavailable\n".data(using: .utf8)!); exit(1)
     }

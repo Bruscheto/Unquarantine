@@ -22,7 +22,7 @@ class FinderSync: FIFinderSync {
         // flag across the extension→Finder process boundary (which is why the symbol
         // version did not adapt). The symbol is kept only as a fallback.
         let icon = NSImage(named: NSImage.Name("MenuIcon"))
-            ?? NSImage(systemSymbolName: "lock.slash.fill", accessibilityDescription: "Remove quarantine")
+            ?? NSImage(systemSymbolName: "lock.slash", accessibilityDescription: "Remove quarantine")
         icon?.isTemplate = true
         item.image = icon
         menu.addItem(item)
