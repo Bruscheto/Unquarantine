@@ -448,6 +448,9 @@ targets:
     settings:
       base:
         CODE_SIGN_ENTITLEMENTS: App/Unquarantine.entitlements
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
         ENABLE_HARDENED_RUNTIME: NO
         GENERATE_INFOPLIST_FILE: NO
     dependencies:
@@ -463,10 +466,17 @@ targets:
     settings:
       base:
         CODE_SIGN_ENTITLEMENTS: Extension/Extension.entitlements
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
         GENERATE_INFOPLIST_FILE: NO
     dependencies:
       - package: UnquarantineCore
 ```
+
+> Ad-hoc signing (`CODE_SIGN_IDENTITY: "-"`, manual style) lets `xcodebuild` build and
+> the bundles load locally with no Apple Developer account. To distribute or run on
+> another Mac you'd switch to a real Developer ID / personal team.
 
 - [ ] **Step 2: Write the host app entitlements (sandbox OFF)**
 
