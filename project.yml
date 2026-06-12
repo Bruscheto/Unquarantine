@@ -11,6 +11,14 @@ settings:
 packages:
   UnquarantineCore:
     path: Core
+schemes:
+  Unquarantine:
+    build:
+      targets:
+        Unquarantine: all
+    test:
+      targets:
+        - UnquarantineFinderExtensionTests
 targets:
   Unquarantine:
     type: application
@@ -58,3 +66,13 @@ targets:
         GENERATE_INFOPLIST_FILE: NO
     dependencies:
       - package: UnquarantineCore
+  UnquarantineFinderExtensionTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - ExtensionTests
+      - Extension/MenuIconAppearance.swift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
