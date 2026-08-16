@@ -5,3 +5,5 @@ dist/
 *.xcodeproj
 App/Info.plist
 Extension/Info.plist
+/.codex
+/openspec

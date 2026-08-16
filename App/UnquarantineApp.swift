@@ -17,6 +17,7 @@ struct UnquarantineApp: App {
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private let status = AppStatus()
     private let permissions = PermissionsModel()
+    private lazy var rightClickRun = RightClickRun(status: status)
     private var setupWindow: NSWindow?
     private var didHandleURL = false
 
@@ -39,18 +40,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
 
     private func handle(_ url: URL) {
-        guard url.scheme == "unquarantine", url.host == "strip",
-              let query = url.query, query.hasPrefix("paths=") else { return }
-        // Use the raw (still percent-encoded) query so PathCodec's comma separator is
-        // intact; URLComponents would percent-decode and could reintroduce a literal comma.
-        let value = String(query.dropFirst("paths=".count))
-        let paths = PathCodec.decode(value).filter { FileManager.default.fileExists(atPath: $0) }
-        guard !paths.isEmpty else { return }
-
-        let script = CommandBuilder.build(paths: paths)
-        let result = PrivilegedRunner.run(script: script)
-        Notifier.notify(result, count: paths.count)
-        status.update(result, count: paths.count)
+        guard let handoff = FinderHandoff(url: url) else { return }
+        rightClickRun.perform(paths: handoff.paths)
     }
 
     // Setup / onboarding window — only when the user opens the app themselves.

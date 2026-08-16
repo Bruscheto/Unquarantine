@@ -6,14 +6,25 @@ enum Notifier {
     static func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
     }
+}
 
-    static func notify(_ result: AppleScriptResult, count: Int) {
-        // The user dismissed the password dialog themselves — no notification needed.
+@MainActor
+struct NotificationRunReporter: RightClickRunReporting {
+    private let deliver: @MainActor (String) -> Void
+
+    init(deliver: @escaping @MainActor (String) -> Void = NotificationRunReporter.deliverNotification) {
+        self.deliver = deliver
+    }
+
+    func report(_ result: AppleScriptResult, count: Int) {
         if case .cancelled = result { return }
+        deliver(result.message(count: count))
+    }
 
+    private static func deliverNotification(_ message: String) {
         let content = UNMutableNotificationContent()
         content.title = "Unquarantine"
-        content.body = result.message(count: count)
+        content.body = message
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request)
     }

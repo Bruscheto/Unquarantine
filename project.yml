@@ -18,6 +18,7 @@ schemes:
         Unquarantine: all
     test:
       targets:
+        - UnquarantineTests
         - UnquarantineFinderExtensionTests
 targets:
   Unquarantine:
@@ -72,6 +73,16 @@ targets:
     sources:
       - ExtensionTests
       - Extension/MenuIconAppearance.swift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+  UnquarantineTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [AppTests]
+    dependencies:
+      - target: Unquarantine
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES

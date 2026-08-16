@@ -1,4 +1,4 @@
-public enum AppleScriptResult: Equatable {
+public enum AppleScriptResult: Equatable, Sendable {
     case success
     case cancelled
     case failed(reason: String)

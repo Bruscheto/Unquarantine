@@ -23,8 +23,7 @@ class FinderSync: FIFinderSync {
 
     @objc func strip(_ sender: AnyObject?) {
         guard let urls = FIFinderSyncController.default().selectedItemURLs(), !urls.isEmpty else { return }
-        let encoded = PathCodec.encode(urls.map { $0.path })
-        guard let url = URL(string: "unquarantine://strip?paths=\(encoded)") else { return }
-        NSWorkspace.shared.open(url)
+        guard let handoff = FinderHandoff(paths: urls.map(\.path)) else { return }
+        NSWorkspace.shared.open(handoff.url)
     }
 }
